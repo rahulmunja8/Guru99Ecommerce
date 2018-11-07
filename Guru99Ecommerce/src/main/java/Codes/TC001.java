@@ -1,5 +1,6 @@
 package Codes;
 
+import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -10,22 +11,25 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
-public class TC001 {
-	
-	public static void main(String[] args) throws InterruptedException{
-	System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
-	ChromeDriver driver = new ChromeDriver();
-	driver.get("http://live.guru99.com/");
-	driver.manage().window().maximize();
-	String homeTitle = driver.getTitle();
-	//if(homeTitle=="Home Page") {
-		System.out.println("The Title of current page is "+homeTitle);
-	//}
-	WebElement mobile = driver.findElementByLinkText("MOBILE");
-	mobile.click();
- String Mobile = driver.getTitle();
- System.out.println("The Title of current page is "+Mobile);
+public class TC001 extends TC002 {
+	ChromeDriver driver;
+	@Test
+	public  void runtest() throws InterruptedException{
+//	System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+
+
+//	driver.get("http://live.guru99.com/");
+//	driver.manage().window().maximize();
+//	String homeTitle = driver.getTitle();
+//	//if(homeTitle=="Home Page") {
+//		System.out.println("The Title of current page is "+homeTitle);
+//	//}
+//	WebElement mobile = driver.findElementByLinkText("MOBILE");
+//	mobile.click();
+// String Mobile = driver.getTitle();
+// System.out.println("The Title of current page is "+Mobile);
  WebElement sort = driver.findElementByXPath("(//select[@title='Sort By'])");
  Select dropdown = new Select(sort);
 
